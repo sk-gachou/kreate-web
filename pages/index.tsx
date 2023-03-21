@@ -15,10 +15,11 @@ type Props = {
 };
 
 export default function RouteToPageHome({ fallback }: Props) {
+  // This is the minimal amount of markup to trigger the error
   return (
-    <SWRConfig value={{ fallback }}>
-      <PageHome />
-    </SWRConfig>
+    <a href="outer">
+      <a href="inner"></a>
+    </a>
   );
 }
 
